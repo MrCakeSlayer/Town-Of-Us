@@ -32,7 +32,7 @@ namespace TownOfUs.CustomOption
         protected internal void Increase()
         {
             var increment = Increment > 5 && Input.GetKeyInt(KeyCode.LeftShift)
-                ? 5
+                ? 1
                 : Increment;
             Set(Mathf.Clamp(Get() + increment, Min, Max));
         }
@@ -40,7 +40,7 @@ namespace TownOfUs.CustomOption
         protected internal void Decrease()
         {
             var increment = Increment > 5 && Input.GetKeyInt(KeyCode.LeftShift)
-                ? 5
+                ? 1
                 : Increment;
             Set(Mathf.Clamp(Get() - increment, Min, Max));
         }

@@ -56,14 +56,14 @@ namespace TownOfUs
         [HarmonyPrefix]
         public static void Prefix(PingTracker __instance)
         {
-            if (!__instance.GetComponentInChildren<SpriteRenderer>())
+            /*if (!__instance.GetComponentInChildren<SpriteRenderer>())
             {
                 var spriteObject = new GameObject("Polus Sprite");
                 spriteObject.AddComponent<SpriteRenderer>().sprite = TownOfUs.PolusSprite;
                 spriteObject.transform.parent = __instance.transform;
                 spriteObject.transform.localPosition = new Vector3(-1f, -0.3f, -1);
                 spriteObject.transform.localScale *= 0.72f;
-            }
+            }*/
         }
 
         [HarmonyPostfix]
@@ -74,13 +74,8 @@ namespace TownOfUs
             position.AdjustPosition();
 
             __instance.text.text =
-                "<color=#00FF00FF>TownOfUs v2.1.4</color>\n" +
-                "Available on <color=#BEA4FFFF>Polus.gg</color>\n" +
-                $"Ping: {AmongUsClient.Instance.Ping}ms\n" +
-                (!MeetingHud.Instance
-                    ? "<color=#00FF00FF>slushiegoose ft. edisonparklive</color>"
-                      //GenerateHatText()
-                    : "");
+	            "<color=#00FF00FF>TownOfUs v2.1.4-pastry</color>\n" +
+	            $"Ping: {AmongUsClient.Instance.Ping}ms";
         }
     }
 }
